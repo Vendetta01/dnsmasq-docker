@@ -1,0 +1,13 @@
+[template]
+src = "dnsmasq.conf.tmpl"
+dest = "/etc/dnsmasq.conf"
+keys = [
+    "/conf/dnsmasq/servers",
+    "/conf/dnsmasq/addresses",
+    "/conf/dnsmasq/advanced_config",
+    "/conf/dnsmasq/no_resolv",
+    "/conf/dnsmasq/log_queries",
+    "/conf/dnsmasq/dns_forward_max",
+]
+check_cmd = "dnsmasq --test"
+reload_cmd = "supervisorctl restart dnsmasq"
